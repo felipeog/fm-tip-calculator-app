@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  },
+  "include": ["src/**/*"],
+  "exclude": [".parcel-cache", "dist", "node_modules"]
+}
