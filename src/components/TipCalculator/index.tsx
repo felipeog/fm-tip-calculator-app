@@ -22,8 +22,10 @@ export function TipCalculator() {
   }
 
   function handleCustomTipPercentage() {
-    set.tipPercentage('')
-    setIsCustomTipPercentage(true)
+    if (!isCustomTipPercentage) {
+      set.tipPercentage('')
+      setIsCustomTipPercentage(true)
+    }
   }
 
   const isResetDisabled = [
