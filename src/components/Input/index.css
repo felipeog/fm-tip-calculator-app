@@ -1,0 +1,43 @@
+.Input {
+  font-size: 0.6rem;
+}
+
+.Input__label-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Input__input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.08rem solid transparent;
+  border-radius: 0.2rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.Input__input-container:focus-within {
+  border-color: green;
+}
+
+.Input svg {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.Input input {
+  flex-grow: 1;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: var(--bold_weight);
+  border: none;
+  outline: none;
+  text-align: right;
+}
+
+.Input input::-webkit-outer-spin-button,
+.Input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -1,4 +1,5 @@
 import Logo from './assets/logo.svg'
+import { Input } from './components/Input'
 import { useTipCalculator } from './hooks/useTipCalculator'
 
 export function App() {
@@ -22,7 +23,10 @@ export function App() {
     <div>
       {/* <Logo /> */}
 
-      <input
+      <Input
+        label="Bill"
+        name="bill"
+        icon="dollar"
         placeholder="0"
         min="0"
         type="number"
@@ -32,7 +36,9 @@ export function App() {
         }}
       />
 
-      <input
+      <Input
+        label="Select Tip %"
+        name="tip"
         placeholder="Custom"
         min="0"
         type="number"
@@ -42,7 +48,10 @@ export function App() {
         }}
       />
 
-      <input
+      <Input
+        label="Number of People"
+        name="people"
+        icon="person"
         placeholder="0"
         min="0"
         type="number"
@@ -50,8 +59,11 @@ export function App() {
         onChange={(event) => {
           set.numberOfPeople(+event.target.value)
         }}
+        condition={{
+          checker: (value) => value <= 0,
+          message: "Can't be zero",
+        }}
       />
-      {value.numberOfPeople === 0 && <p>Can't be zero</p>}
 
       <p>tip / person: {getFormattedValue(value.tipPerPerson)}</p>
       <p>total / person: {getFormattedValue(value.totalPerPerson)}</p>

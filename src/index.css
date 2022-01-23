@@ -22,4 +22,5 @@
 html {
   font-size: var(--root_font_size);
   font-family: var(--font_family);
+  font-weight: var(--bold_weight);
 }
