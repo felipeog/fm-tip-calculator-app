@@ -1,0 +1,50 @@
+.TipCalculator {
+  width: 38.4rem;
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - (1.4rem / 2)));
+  gap: 1.4rem;
+  padding: 1.4rem;
+  background-color: var(--white);
+  border-radius: 1rem;
+}
+
+.TipCalculator__form {
+  margin: 0.4rem 0;
+}
+
+.TipCalculator__tip-percentage {
+  margin: 1.4rem 0;
+}
+
+.TipCalculator__label {
+  font-size: 0.6rem;
+  color: var(--dark_grayish_cyan1);
+}
+
+.TipCalculator__tip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, calc(33.3333% - (0.8rem * 2 / 3)));
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.TipCalculator__tip-grid .Input input {
+  max-width: 100%;
+  text-align: center;
+}
+
+.TipCalculator__results {
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem;
+  background-color: var(--very_dark_cyan);
+  border-radius: 0.6rem;
+}
+
+.TipCalculator__results .Button {
+  margin-top: auto;
+}
+
+.TipResult + .TipResult {
+  margin-top: 1.4rem;
+}
