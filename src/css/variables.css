@@ -11,6 +11,7 @@
   --light_grayish_cyan1: hsl(185, 41%, 84%);
   --light_grayish_cyan2: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
+  --danger: hsl(8, 33%, 54%);
 
   /* typography */
   --root_font_size: 24px;

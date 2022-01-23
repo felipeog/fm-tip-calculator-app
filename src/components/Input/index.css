@@ -11,18 +11,27 @@
   margin-bottom: 0.4rem;
 }
 
+.Input__error {
+  color: var(--danger);
+}
+
 .Input__input-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.2rem 0.4rem;
-  border: 0.08rem solid transparent;
+  border: 0.09rem solid transparent;
   border-radius: 0.2rem;
   background-color: var(--light_grayish_cyan2);
 }
 
 .Input__input-container:focus-within {
-  border-color: green;
+  border-color: var(--dark_grayish_cyan2);
+}
+
+.Input__input-container--errors,
+.Input__input-container--errors:focus-within {
+  border-color: var(--danger);
 }
 
 .Input svg {

@@ -13,19 +13,23 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export function Input({ label, condition, icon, ...props }: InputProps) {
+  const hasErrors = condition && condition.checker(props.value)
+
   return (
     <label className="Input" htmlFor={props.name}>
       {(label || condition) && (
         <div className="Input__label-container">
           {label && <p>{label}</p>}
 
-          {condition && condition.checker(props.value) && (
-            <p>{condition.message}</p>
-          )}
+          {hasErrors && <p className="Input__error">{condition.message}</p>}
         </div>
       )}
 
-      <div className="Input__input-container">
+      <div
+        className={`Input__input-container ${
+          hasErrors ? 'Input__input-container--errors' : ''
+        }`}
+      >
         {icon && <Icon icon={icon} />}
 
         <input name={props.name} id={props.name} {...props} />
