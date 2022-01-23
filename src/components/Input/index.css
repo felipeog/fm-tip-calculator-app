@@ -1,20 +1,24 @@
 .Input {
+  display: block;
   font-size: 0.6rem;
+  color: var(--dark_grayish_cyan1);
 }
 
 .Input__label-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 0.4rem;
 }
 
 .Input__input-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0.2rem 0.4rem;
   border: 0.08rem solid transparent;
   border-radius: 0.2rem;
-  padding: 0.2rem 0.4rem;
+  background-color: var(--light_grayish_cyan2);
 }
 
 .Input__input-container:focus-within {
@@ -28,12 +32,12 @@
 
 .Input input {
   flex-grow: 1;
-  font-family: var(--font-family);
   font-size: 1rem;
   font-weight: var(--bold_weight);
   border: none;
   outline: none;
   text-align: right;
+  background-color: transparent;
 }
 
 .Input input::-webkit-outer-spin-button,

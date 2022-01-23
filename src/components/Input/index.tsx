@@ -12,19 +12,21 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   }
 }
 
-export function Input(props: InputProps) {
+export function Input({ label, condition, icon, ...props }: InputProps) {
   return (
     <label className="Input" htmlFor={props.name}>
-      <div className="Input__label-container">
-        <p>{props.label}</p>
+      {(label || condition) && (
+        <div className="Input__label-container">
+          {label && <p>{label}</p>}
 
-        {props.condition && props.condition.checker(props.value) && (
-          <p>{props.condition.message}</p>
-        )}
-      </div>
+          {condition && condition.checker(props.value) && (
+            <p>{condition.message}</p>
+          )}
+        </div>
+      )}
 
       <div className="Input__input-container">
-        {props?.icon && <Icon icon={props.icon} />}
+        {icon && <Icon icon={icon} />}
 
         <input name={props.name} id={props.name} {...props} />
       </div>
