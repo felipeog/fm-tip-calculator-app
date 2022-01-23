@@ -1,0 +1,38 @@
+.Button {
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.2rem 0.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.Button--dark {
+  background-color: var(--very_dark_cyan);
+  color: var(--white);
+}
+
+.Button--dark.Button--selected {
+  background-color: var(--strong_cyan);
+  color: var(--very_dark_cyan);
+}
+
+.Button--light {
+  background-color: var(--strong_cyan);
+  color: var(--very_dark_cyan);
+}
+
+.Button--light.Button--selected {
+  background-color: var(--very_dark_cyan);
+  color: var(--white);
+}
+
+.Button--dark:not(.Button--disabled):hover,
+.Button--light:not(.Button--disabled):hover {
+  background-color: var(--light_grayish_cyan1);
+  color: var(--very_dark_cyan);
+}
+
+.Button--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
