@@ -14,7 +14,7 @@
 
   /* typography */
   --root_font_size: 24px;
-  --font_family: "Space Mono", sans-serif;
+  --font_family: 'Space Mono', sans-serif;
   --regular_weight: 400;
   --bold_weight: 700;
 }
