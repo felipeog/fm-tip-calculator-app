@@ -1,0 +1,21 @@
+*::before,
+*::after,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--light_grayish_cyan1);
+  font-family: var(--font_family);
+  font-size: var(--root_font_size);
+  font-weight: var(--bold_weight);
+}
+
+button,
+input {
+  font-family: var(--font_family);
+  font-size: var(--root_font_size);
+  font-weight: var(--bold_weight);
+}
