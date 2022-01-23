@@ -1,0 +1,20 @@
+.TipResult {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+}
+
+.TipResult__label {
+  font-size: 0.7rem;
+}
+
+.TipResult__sublabel {
+  font-size: 0.6rem;
+  color: var(--dark_grayish_cyan2);
+}
+
+.TipResult__value {
+  font-size: 1.8rem;
+  color: var(--strong_cyan);
+}
