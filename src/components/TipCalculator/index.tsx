@@ -7,7 +7,7 @@ import { Input } from '../Input'
 import { TipResult } from '../TipResult'
 import TipStore from '../../stores/TipStore'
 
-export const TipCalculator = observer(() => {
+export const TipCalculator = observer(function TipCalculator() {
   const [isCustomTipPercentage, setIsCustomTipPercentage] = useState(false)
 
   function resetInputs() {
