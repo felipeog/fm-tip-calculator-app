@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://github.com/felipeog/fm-tip-calculator-app
-- Live Site URL: https://blissful-meninsky-9775d7.netlify.app
+- Live Site URL: https://felipeog-fm-tip-calculator-app.netlify.app/
 
 ## My process
 
