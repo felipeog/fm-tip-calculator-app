@@ -9,10 +9,11 @@ class TipStore {
     this.bill = 0
     this.tipPercentage = 0
     this.numberOfPeople = 0
+
     makeAutoObservable(this)
   }
 
-  get tipPerPerson() {
+  get tipPerPerson(): number {
     if (this.numberOfPeople <= 0) {
       return 0
     }
@@ -22,7 +23,7 @@ class TipStore {
     return tip / this.numberOfPeople
   }
 
-  get totalPerPerson() {
+  get totalPerPerson(): number {
     if (this.numberOfPeople <= 0) {
       return 0
     }
