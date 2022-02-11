@@ -1,37 +1,37 @@
 import { useState } from 'react'
+import { observer } from 'mobx-react-lite'
 
 import './index.css'
 import { Button } from '../Button'
 import { Input } from '../Input'
-import { useTipCalculator } from '../../hooks/useTipCalculator'
 import { TipResult } from '../TipResult'
+import TipStore from '../../stores/TipStore'
 
-export function TipCalculator() {
+export const TipCalculator = observer(() => {
   const [isCustomTipPercentage, setIsCustomTipPercentage] = useState(false)
-  const { get, set } = useTipCalculator()
 
   function resetInputs() {
-    set.bill('')
-    set.numberOfPeople('')
-    set.tipPercentage('')
+    TipStore.setBill('')
+    TipStore.setNumberOfPeople('')
+    TipStore.setTipPercentage('')
   }
 
   function handleTipPercentage(percentage: number) {
     setIsCustomTipPercentage(false)
-    set.tipPercentage(percentage)
+    TipStore.setTipPercentage(percentage)
   }
 
   function handleCustomTipPercentage() {
     if (!isCustomTipPercentage) {
-      set.tipPercentage('')
+      TipStore.setTipPercentage('')
       setIsCustomTipPercentage(true)
     }
   }
 
   const isResetDisabled = [
-    get.bill,
-    get.numberOfPeople,
-    get.tipPercentage,
+    TipStore.bill,
+    TipStore.numberOfPeople,
+    TipStore.tipPercentage,
   ].every((value) => !value)
 
   return (
@@ -44,9 +44,9 @@ export function TipCalculator() {
           placeholder="0"
           min="0"
           type="number"
-          value={get.bill}
+          value={TipStore.bill}
           onChange={(event) => {
-            set.bill(+event.target.value)
+            TipStore.setBill(+event.target.value)
           }}
         />
 
@@ -56,35 +56,45 @@ export function TipCalculator() {
           <div className="TipCalculator__tip-grid">
             <Button
               variant="dark"
-              isSelected={!isCustomTipPercentage && get.tipPercentage === 5}
+              isSelected={
+                !isCustomTipPercentage && TipStore.tipPercentage === 5
+              }
               onClick={() => handleTipPercentage(5)}
             >
               5%
             </Button>
             <Button
               variant="dark"
-              isSelected={!isCustomTipPercentage && get.tipPercentage === 10}
+              isSelected={
+                !isCustomTipPercentage && TipStore.tipPercentage === 10
+              }
               onClick={() => handleTipPercentage(10)}
             >
               10%
             </Button>
             <Button
               variant="dark"
-              isSelected={!isCustomTipPercentage && get.tipPercentage === 15}
+              isSelected={
+                !isCustomTipPercentage && TipStore.tipPercentage === 15
+              }
               onClick={() => handleTipPercentage(15)}
             >
               15%
             </Button>
             <Button
               variant="dark"
-              isSelected={!isCustomTipPercentage && get.tipPercentage === 25}
+              isSelected={
+                !isCustomTipPercentage && TipStore.tipPercentage === 25
+              }
               onClick={() => handleTipPercentage(25)}
             >
               25%
             </Button>
             <Button
               variant="dark"
-              isSelected={!isCustomTipPercentage && get.tipPercentage === 50}
+              isSelected={
+                !isCustomTipPercentage && TipStore.tipPercentage === 50
+              }
               onClick={() => handleTipPercentage(50)}
             >
               50%
@@ -94,9 +104,9 @@ export function TipCalculator() {
               placeholder="Custom"
               min="0"
               type="number"
-              value={isCustomTipPercentage ? get.tipPercentage : ''}
+              value={isCustomTipPercentage ? TipStore.tipPercentage : ''}
               onChange={(event) => {
-                set.tipPercentage(+event.target.value)
+                TipStore.setTipPercentage(+event.target.value)
               }}
               onFocus={handleCustomTipPercentage}
             />
@@ -110,9 +120,9 @@ export function TipCalculator() {
           placeholder="0"
           min="0"
           type="number"
-          value={get.numberOfPeople}
+          value={TipStore.numberOfPeople}
           onChange={(event) => {
-            set.numberOfPeople(+event.target.value)
+            TipStore.setNumberOfPeople(+event.target.value)
           }}
           condition={{
             checker: (value) => typeof value === 'number' && value <= 0,
@@ -122,8 +132,8 @@ export function TipCalculator() {
       </div>
 
       <div className="TipCalculator__results">
-        <TipResult label="Tip Amount" value={get.tipPerPerson} />
-        <TipResult label="Total" value={get.totalPerPerson} />
+        <TipResult label="Tip Amount" value={TipStore.tipPerPerson} />
+        <TipResult label="Total" value={TipStore.totalPerPerson} />
 
         <Button isDisabled={isResetDisabled} onClick={resetInputs}>
           Reset
@@ -131,4 +141,4 @@ export function TipCalculator() {
       </div>
     </main>
   )
-}
+})
