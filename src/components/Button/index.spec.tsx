@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
 import { Button, POSSIBLE_VARIANTS } from './index'
@@ -10,51 +10,64 @@ it('Should render', () => {
 describe('Props tests', () => {
   it('Should render correct text', () => {
     const text = 'Text test'
-    const { getByText } = render(<Button>{text}</Button>)
 
-    expect(getByText(text)).toBeTruthy()
+    render(<Button>{text}</Button>)
+    expect(screen.getByText(text)).toBeInTheDocument()
   })
 
   it('Should render correct children', () => {
-    const children = <p>Children test</p>
-    const { container } = render(<Button>{children}</Button>)
+    const testId = 'children-test'
+    const children = <p data-testid={testId}>Children test</p>
 
-    expect(container.querySelector('p')).toBeTruthy()
+    render(<Button>{children}</Button>)
+    expect(screen.getByTestId(testId)).toBeInTheDocument()
   })
 
   it('Should render correct class name', () => {
-    const className = 'class-name-test'
-    const { container } = render(
-      <Button className={className}>{className}</Button>,
-    )
+    const testId = 'class-name-test'
+    const className = 'button-class-name'
 
-    expect(container.firstChild).toHaveClass(className)
+    render(
+      <Button data-testid={testId} className={className}>
+        {className}
+      </Button>,
+    )
+    expect(screen.getByTestId(testId)).toHaveClass(className)
   })
 
   POSSIBLE_VARIANTS.forEach((variant) => {
     it(`Should render ${variant} variant`, () => {
-      const { container, unmount } = render(
-        <Button variant={variant}>{variant}</Button>,
+      const testId = 'variant-test'
+      const { unmount } = render(
+        <Button data-testid={testId} variant={variant}>
+          {variant}
+        </Button>,
       )
 
-      expect(container.firstChild).toHaveClass(`Button--${variant}`)
+      expect(screen.getByTestId(testId)).toHaveClass(`Button--${variant}`)
       unmount()
     })
   })
 
   it('Should render selected state', () => {
-    const { container } = render(
-      <Button isSelected>Selected state test</Button>,
-    )
+    const testId = 'selected-state-test'
 
-    expect(container.firstChild).toHaveClass('Button--selected')
+    render(
+      <Button data-testid={testId} isSelected>
+        Selected state test
+      </Button>,
+    )
+    expect(screen.getByTestId(testId)).toHaveClass('Button--selected')
   })
 
   it('Should render disabled state', () => {
-    const { container } = render(
-      <Button isDisabled>Disabled state test</Button>,
-    )
+    const testId = 'disabled-test-id'
 
-    expect(container.firstChild).toHaveClass('Button--disabled')
+    render(
+      <Button data-testid={testId} isDisabled>
+        Disabled state test
+      </Button>,
+    )
+    expect(screen.getByTestId(testId)).toHaveClass('Button--disabled')
   })
 })
