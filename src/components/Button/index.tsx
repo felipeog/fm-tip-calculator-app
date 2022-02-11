@@ -1,9 +1,10 @@
 import { ButtonHTMLAttributes } from 'react'
+import classNames from 'classnames'
 
 import './index.css'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: string
+  variant?: 'dark' | 'light'
   isSelected?: boolean
   isDisabled?: boolean
 }
@@ -14,14 +15,13 @@ export function Button({
   isDisabled,
   ...props
 }: ButtonProps) {
-  return (
-    <button
-      className={`Button Button--${variant} ${
-        isSelected ? 'Button--selected' : ''
-      } ${isDisabled ? 'Button--disabled' : ''}`}
-      {...props}
-    />
-  )
+  const buttonClasses = classNames('Button', {
+    [`Button--${variant}`]: variant,
+    'Button--selected': isSelected,
+    'Button--disabled': isDisabled,
+  })
+
+  return <button className={buttonClasses} {...props} />
 }
 
 Button.defaultProps = {

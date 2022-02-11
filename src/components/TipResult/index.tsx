@@ -1,12 +1,17 @@
 import './index.css'
 
-export function TipResult({ label, value }) {
-  function getFormattedValue(value: number) {
-    if (!value || isNaN(value)) {
+interface TipResultProps {
+  label: string
+  value: number
+}
+
+export function TipResult({ label, value }: TipResultProps) {
+  function getFormattedValue(rawValue: number) {
+    if (!rawValue || isNaN(rawValue)) {
       return '$0.00'
     }
 
-    return `$${value.toFixed(2)}`
+    return `$${rawValue.toFixed(2)}`
   }
 
   return (

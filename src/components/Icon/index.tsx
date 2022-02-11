@@ -1,7 +1,14 @@
-import * as icons from './icons'
+import * as ICONS from './icons'
 
-export function Icon({ icon }) {
-  const Icon = icons[icon]
+export const AVAILABLE_ICONS = Object.keys(ICONS)
+export type AvailableIcons = keyof typeof ICONS
 
-  return <Icon />
+interface IconProps {
+  icon: AvailableIcons
+}
+
+export function Icon({ icon }: IconProps) {
+  const IconComponent = ICONS[icon]
+
+  return <IconComponent />
 }
