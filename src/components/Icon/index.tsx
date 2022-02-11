@@ -3,12 +3,12 @@ import classNames from 'classnames'
 
 import * as ICONS from './icons'
 
-export type Icon = keyof typeof ICONS
+export type TIcon = keyof typeof ICONS
 
-export const AVAILABLE_ICONS = Object.keys(ICONS) as Icon[]
+export const AVAILABLE_ICONS = Object.keys(ICONS) as TIcon[]
 
 interface IconProps extends SVGProps<SVGSVGElement> {
-  icon: Icon
+  icon: TIcon
 }
 
 export function Icon({ className, icon, ...props }: IconProps) {
