@@ -6,6 +6,17 @@
   min-height: 100vh;
 }
 
-.TipCalculator {
-  margin-top: 3.6rem;
+/* Desktop >= 1024px */
+@media screen and (min-width: 1024px) {
+  .TipCalculator {
+    margin-top: 3.6rem;
+  }
+}
+
+/* Mobile < 1024px */
+@media screen and (max-width: 1023px) {
+  .Header,
+  .TipCalculator {
+    margin-top: 1.6rem;
+  }
 }

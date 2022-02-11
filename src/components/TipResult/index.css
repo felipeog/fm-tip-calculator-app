@@ -15,6 +15,20 @@
 }
 
 .TipResult__value {
-  font-size: 1.8rem;
   color: var(--strong_cyan);
+}
+
+/* Desktop >= 1024px */
+@media screen and (min-width: 1024px) {
+  .TipResult__value {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile < 1024px */
+@media screen and (max-width: 1023px) {
+  .Header,
+  .TipResult__value {
+    font-size: 1.4rem;
+  }
 }
