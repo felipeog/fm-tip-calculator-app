@@ -4,5 +4,6 @@ module.exports = {
   testEnvironment: 'jsdom',
   transform: {
     '.+\\.(css)$': 'jest-css-modules-transform',
+    '.+\\.(svg)$': 'svg-jest',
   },
 }
