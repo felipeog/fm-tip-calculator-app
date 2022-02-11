@@ -3,19 +3,24 @@ import classNames from 'classnames'
 
 import './index.css'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'dark' | 'light'
+export const POSSIBLE_VARIANTS = ['dark', 'light'] as const
+
+export type Variant = typeof POSSIBLE_VARIANTS[number]
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: Variant
   isSelected?: boolean
   isDisabled?: boolean
 }
 
 export function Button({
+  className,
   variant,
   isSelected,
   isDisabled,
   ...props
 }: ButtonProps) {
-  const buttonClasses = classNames('Button', {
+  const buttonClasses = classNames('Button', className, {
     [`Button--${variant}`]: variant,
     'Button--selected': isSelected,
     'Button--disabled': isDisabled,
