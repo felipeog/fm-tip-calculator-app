@@ -22,7 +22,7 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Calculate the correct tip and total cost of the bill per person
 
-### Screenshot
+### Screenshots
 
 [![tip-calculator-desktop.png](https://i.postimg.cc/J09jmWfL/tip-calculator-desktop.png)](https://postimg.cc/y3yDX26Q)
 [![tip-calculator-mobile.png](https://i.postimg.cc/cCKfVJ5h/tip-calculator-mobile.png)](https://postimg.cc/LgpqPmSg)
@@ -40,7 +40,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Desktop workflow
+- Desktop first workflow
 - [React](https://reactjs.org/) - JS library
 - [MobX](https://mobx.js.org/) - State management
 - [Parcel](https://parceljs.org/) - Build tool
