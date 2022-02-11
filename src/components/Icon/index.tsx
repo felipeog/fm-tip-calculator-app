@@ -1,14 +1,20 @@
+import { ComponentType, HTMLAttributes, SVGProps } from 'react'
+import classNames from 'classnames'
+
 import * as ICONS from './icons'
 
-export const AVAILABLE_ICONS = Object.keys(ICONS)
-export type AvailableIcons = keyof typeof ICONS
+export type Icon = keyof typeof ICONS
 
-interface IconProps {
-  icon: AvailableIcons
+export const AVAILABLE_ICONS = Object.keys(ICONS) as Icon[]
+
+interface IconProps extends SVGProps<SVGSVGElement> {
+  icon: Icon
 }
 
-export function Icon({ icon }: IconProps) {
-  const IconComponent = ICONS[icon]
+export function Icon({ className, icon, ...props }: IconProps) {
+  const IconComponent = ICONS[icon] as ComponentType<
+    HTMLAttributes<SVGSVGElement>
+  >
 
-  return <IconComponent />
+  return <IconComponent className={classNames('Icon', className)} {...props} />
 }
