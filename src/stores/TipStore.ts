@@ -3,11 +3,14 @@ import { makeAutoObservable } from 'mobx'
 type Value = number | string
 
 class TipStore {
-  bill: Value = ''
-  tipPercentage: Value = ''
-  numberOfPeople: Value = ''
+  bill: Value
+  tipPercentage: Value
+  numberOfPeople: Value
 
   constructor() {
+    this.bill = ''
+    this.tipPercentage = ''
+    this.numberOfPeople = ''
     makeAutoObservable(this)
   }
 
