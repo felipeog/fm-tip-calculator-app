@@ -7,13 +7,15 @@ import { Input } from '../Input'
 import { TipResult } from '../TipResult'
 import TipStore from '../../stores/TipStore'
 
+const TIP_PERCENTAGES = [5, 10, 15, 25, 50]
+
 export const TipCalculator = observer(function TipCalculator() {
   const [isCustomTipPercentage, setIsCustomTipPercentage] = useState(false)
 
   function resetInputs() {
-    TipStore.setBill('')
-    TipStore.setNumberOfPeople('')
-    TipStore.setTipPercentage('')
+    TipStore.setBill(0)
+    TipStore.setNumberOfPeople(0)
+    TipStore.setTipPercentage(0)
   }
 
   function handleTipPercentage(percentage: number) {
@@ -23,7 +25,7 @@ export const TipCalculator = observer(function TipCalculator() {
 
   function handleCustomTipPercentage() {
     if (!isCustomTipPercentage) {
-      TipStore.setTipPercentage('')
+      TipStore.setTipPercentage(0)
       setIsCustomTipPercentage(true)
     }
   }
@@ -44,7 +46,7 @@ export const TipCalculator = observer(function TipCalculator() {
           placeholder="0"
           min="0"
           type="number"
-          value={TipStore.bill}
+          value={TipStore.bill || ''}
           onChange={(event) => {
             TipStore.setBill(+event.target.value)
           }}
@@ -54,57 +56,26 @@ export const TipCalculator = observer(function TipCalculator() {
           <p className="TipCalculator__label">Select Tip %</p>
 
           <div className="TipCalculator__tip-grid">
-            <Button
-              variant="dark"
-              isSelected={
-                !isCustomTipPercentage && TipStore.tipPercentage === 5
-              }
-              onClick={() => handleTipPercentage(5)}
-            >
-              5%
-            </Button>
-            <Button
-              variant="dark"
-              isSelected={
-                !isCustomTipPercentage && TipStore.tipPercentage === 10
-              }
-              onClick={() => handleTipPercentage(10)}
-            >
-              10%
-            </Button>
-            <Button
-              variant="dark"
-              isSelected={
-                !isCustomTipPercentage && TipStore.tipPercentage === 15
-              }
-              onClick={() => handleTipPercentage(15)}
-            >
-              15%
-            </Button>
-            <Button
-              variant="dark"
-              isSelected={
-                !isCustomTipPercentage && TipStore.tipPercentage === 25
-              }
-              onClick={() => handleTipPercentage(25)}
-            >
-              25%
-            </Button>
-            <Button
-              variant="dark"
-              isSelected={
-                !isCustomTipPercentage && TipStore.tipPercentage === 50
-              }
-              onClick={() => handleTipPercentage(50)}
-            >
-              50%
-            </Button>
+            {TIP_PERCENTAGES.map((percentage) => (
+              <Button
+                key={percentage}
+                variant="dark"
+                isSelected={
+                  !isCustomTipPercentage &&
+                  TipStore.tipPercentage === percentage
+                }
+                onClick={() => handleTipPercentage(percentage)}
+              >
+                {percentage}%
+              </Button>
+            ))}
+
             <Input
               name="tip"
               placeholder="Custom"
               min="0"
               type="number"
-              value={isCustomTipPercentage ? TipStore.tipPercentage : ''}
+              value={isCustomTipPercentage ? TipStore.tipPercentage || '' : ''}
               onChange={(event) => {
                 TipStore.setTipPercentage(+event.target.value)
               }}
@@ -120,13 +91,9 @@ export const TipCalculator = observer(function TipCalculator() {
           placeholder="0"
           min="0"
           type="number"
-          value={TipStore.numberOfPeople}
+          value={TipStore.numberOfPeople || ''}
           onChange={(event) => {
             TipStore.setNumberOfPeople(+event.target.value)
-          }}
-          condition={{
-            checker: (value) => typeof value === 'number' && value <= 0,
-            message: "Can't be zero",
           }}
         />
       </div>

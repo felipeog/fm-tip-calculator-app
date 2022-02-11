@@ -1,16 +1,14 @@
 import { makeAutoObservable } from 'mobx'
 
-type Value = number | string
-
 class TipStore {
-  bill: Value
-  tipPercentage: Value
-  numberOfPeople: Value
+  bill: number
+  tipPercentage: number
+  numberOfPeople: number
 
   constructor() {
-    this.bill = ''
-    this.tipPercentage = ''
-    this.numberOfPeople = ''
+    this.bill = 0
+    this.tipPercentage = 0
+    this.numberOfPeople = 0
     makeAutoObservable(this)
   }
 
@@ -19,13 +17,9 @@ class TipStore {
       return 0
     }
 
-    if (!this.tipPercentage || isNaN(+this.tipPercentage)) {
-      return 0
-    }
+    const tip = this.bill * (this.tipPercentage / 100)
 
-    const tip = +this.bill * (+this.tipPercentage / 100)
-
-    return tip / +this.numberOfPeople
+    return tip / this.numberOfPeople
   }
 
   get totalPerPerson() {
@@ -33,18 +27,18 @@ class TipStore {
       return 0
     }
 
-    return +this.bill / +this.numberOfPeople + this.tipPerPerson
+    return this.bill / this.numberOfPeople + this.tipPerPerson
   }
 
-  setBill(bill: Value) {
+  setBill(bill: number) {
     this.bill = bill
   }
 
-  setTipPercentage(tipPercentage: Value) {
+  setTipPercentage(tipPercentage: number) {
     this.tipPercentage = tipPercentage
   }
 
-  setNumberOfPeople(numberOfPeople: Value) {
+  setNumberOfPeople(numberOfPeople: number) {
     this.numberOfPeople = numberOfPeople
   }
 }
