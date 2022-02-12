@@ -3,18 +3,19 @@ import '@testing-library/jest-dom'
 
 import { Icon, AVAILABLE_ICONS } from './index'
 
-it('Should render', () => {
-  expect(render(<Icon icon="dollar" />)).toBeTruthy()
-})
+describe('test Icon component', () => {
+  it('should render', () => {
+    expect.hasAssertions()
+    expect(render(<Icon icon="dollar" />)).toBeTruthy()
+  })
 
-describe('Props tests', () => {
-  AVAILABLE_ICONS.forEach((icon) => {
-    it(`Should render ${icon} icon`, () => {
-      const testId = icon
-      const { unmount } = render(<Icon data-testid={testId} icon={icon} />)
+  it.each(AVAILABLE_ICONS)('should render %s icon', (icon) => {
+    expect.hasAssertions()
 
-      expect(screen.getByTestId(testId)).toBeInTheDocument()
-      unmount()
-    })
+    const testId = icon
+    const { unmount } = render(<Icon data-testid={testId} icon={icon} />)
+
+    expect(screen.getByTestId(testId)).toBeInTheDocument()
+    unmount()
   })
 })

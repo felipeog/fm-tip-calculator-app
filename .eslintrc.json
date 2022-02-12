@@ -38,7 +38,7 @@
     },
     {
       "extends": ["plugin:jest/all"],
-      "files": ["./**/*.spec.ts"]
+      "files": ["./**/*.spec.ts", "./**/*.spec.tsx"]
     }
   ]
 }

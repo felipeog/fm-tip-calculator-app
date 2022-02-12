@@ -3,6 +3,9 @@ import '@testing-library/jest-dom'
 
 import { Header } from './index'
 
-it('Should render', () => {
-  expect(render(<Header />)).toBeTruthy()
+describe('test Header component', () => {
+  it('should render', () => {
+    expect.hasAssertions()
+    expect(render(<Header />)).toBeTruthy()
+  })
 })

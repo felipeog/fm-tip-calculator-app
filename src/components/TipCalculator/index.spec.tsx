@@ -3,61 +3,84 @@ import '@testing-library/jest-dom'
 
 import { TipCalculator, TIP_PERCENTAGES } from './index'
 
-it('Should render', () => {
-  expect(render(<TipCalculator />)).toBeTruthy()
-})
+describe('test TipCalculator component', () => {
+  it('should render', () => {
+    expect.hasAssertions()
 
-describe('UI tests', () => {
-  it('Should render Bill input', () => {
-    const { container } = render(<TipCalculator />)
-
-    /* eslint-disable-next-line */
-    expect(container.querySelector('input[name=bill]')).toBeInTheDocument()
+    expect(render(<TipCalculator />)).toBeTruthy()
   })
 
-  it(`Should render tip buttons`, () => {
-    render(<TipCalculator />)
+  describe('ui tests', () => {
+    it('should render Bill input', () => {
+      expect.hasAssertions()
 
-    TIP_PERCENTAGES.forEach((tip) => {
-      expect(screen.getByText(`${tip}%`)).toBeInTheDocument()
+      const { container } = render(<TipCalculator />)
+
+      // FIXME:
+      // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+      expect(container.querySelector('input[name=bill]')).toBeInTheDocument()
     })
-  })
 
-  it('Should render custom tip input', () => {
-    const { container } = render(<TipCalculator />)
+    it(`should render tip buttons`, () => {
+      expect.hasAssertions()
 
-    /* eslint-disable-next-line */
-    expect(container.querySelector('input[name=tip]')).toBeInTheDocument()
-  })
+      render(<TipCalculator />)
 
-  it('Should render Number of People input', () => {
-    const { container } = render(<TipCalculator />)
+      TIP_PERCENTAGES.forEach((tip) => {
+        expect(screen.getByText(`${tip}%`)).toBeInTheDocument()
+      })
+    })
 
-    /* eslint-disable-next-line */
-    expect(container.querySelector('input[name=people]')).toBeInTheDocument()
-  })
+    it('should render custom tip input', () => {
+      expect.hasAssertions()
 
-  it('Should render Tip Amount label', () => {
-    render(<TipCalculator />)
+      const { container } = render(<TipCalculator />)
 
-    expect(screen.getByText('Tip Amount')).toBeInTheDocument()
-  })
+      // FIXME:
+      // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+      expect(container.querySelector('input[name=tip]')).toBeInTheDocument()
+    })
 
-  it('Should render Total label', () => {
-    render(<TipCalculator />)
+    it('should render Number of People input', () => {
+      expect.hasAssertions()
 
-    expect(screen.getByText('Total')).toBeInTheDocument()
-  })
+      const { container } = render(<TipCalculator />)
 
-  it('Should render Tip Amount and Total result', () => {
-    render(<TipCalculator />)
+      // FIXME:
+      // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+      expect(container.querySelector('input[name=people]')).toBeInTheDocument()
+    })
 
-    expect(screen.getAllByText('$0.00')).toHaveLength(2)
-  })
+    it('should render Tip Amount label', () => {
+      expect.hasAssertions()
 
-  it(`Should render Reset buttons`, () => {
-    render(<TipCalculator />)
+      render(<TipCalculator />)
 
-    expect(screen.getByText('Reset')).toBeInTheDocument()
+      expect(screen.getByText('Tip Amount')).toBeInTheDocument()
+    })
+
+    it('should render Total label', () => {
+      expect.hasAssertions()
+
+      render(<TipCalculator />)
+
+      expect(screen.getByText('Total')).toBeInTheDocument()
+    })
+
+    it('should render Tip Amount and Total result', () => {
+      expect.hasAssertions()
+
+      render(<TipCalculator />)
+
+      expect(screen.getAllByText('$0.00')).toHaveLength(2)
+    })
+
+    it(`should render Reset buttons`, () => {
+      expect.hasAssertions()
+
+      render(<TipCalculator />)
+
+      expect(screen.getByText('Reset')).toBeInTheDocument()
+    })
   })
 })

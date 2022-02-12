@@ -3,40 +3,50 @@ import '@testing-library/jest-dom'
 
 import { Button, POSSIBLE_VARIANTS } from './index'
 
-it('Should render', () => {
-  expect(render(<Button>Button</Button>)).toBeTruthy()
-})
+describe('test Button component', () => {
+  it('should render', () => {
+    expect.hasAssertions()
 
-describe('Props tests', () => {
-  it('Should render correct text', () => {
-    const text = 'Text test'
-
-    render(<Button>{text}</Button>)
-    expect(screen.getByText(text)).toBeInTheDocument()
+    expect(render(<Button>Button</Button>)).toBeTruthy()
   })
 
-  it('Should render correct children', () => {
-    const testId = 'children-test'
-    const children = <p data-testid={testId}>Children test</p>
+  describe('props tests', () => {
+    it('should render correct text', () => {
+      expect.hasAssertions()
 
-    render(<Button>{children}</Button>)
-    expect(screen.getByTestId(testId)).toBeInTheDocument()
-  })
+      const text = 'Text test'
 
-  it('Should render correct class name', () => {
-    const testId = 'class-name-test'
-    const className = 'button-class-name'
+      render(<Button>{text}</Button>)
+      expect(screen.getByText(text)).toBeInTheDocument()
+    })
 
-    render(
-      <Button data-testid={testId} className={className}>
-        {className}
-      </Button>,
-    )
-    expect(screen.getByTestId(testId)).toHaveClass(className)
-  })
+    it('should render correct children', () => {
+      expect.hasAssertions()
 
-  POSSIBLE_VARIANTS.forEach((variant) => {
-    it(`Should render ${variant} variant`, () => {
+      const testId = 'children-test'
+      const children = <p data-testid={testId}>Children test</p>
+
+      render(<Button>{children}</Button>)
+      expect(screen.getByTestId(testId)).toBeInTheDocument()
+    })
+
+    it('should render correct class name', () => {
+      expect.hasAssertions()
+
+      const testId = 'class-name-test'
+      const className = 'button-class-name'
+
+      render(
+        <Button data-testid={testId} className={className}>
+          {className}
+        </Button>,
+      )
+      expect(screen.getByTestId(testId)).toHaveClass(className)
+    })
+
+    it.each(POSSIBLE_VARIANTS)('should render %s variant', (variant) => {
+      expect.hasAssertions()
+
       const testId = 'variant-test'
       const { unmount } = render(
         <Button data-testid={testId} variant={variant}>
@@ -47,27 +57,31 @@ describe('Props tests', () => {
       expect(screen.getByTestId(testId)).toHaveClass(`Button--${variant}`)
       unmount()
     })
-  })
 
-  it('Should render selected state', () => {
-    const testId = 'selected-state-test'
+    it('should render selected state', () => {
+      expect.hasAssertions()
 
-    render(
-      <Button data-testid={testId} isSelected>
-        Selected state test
-      </Button>,
-    )
-    expect(screen.getByTestId(testId)).toHaveClass('Button--selected')
-  })
+      const testId = 'selected-state-test'
 
-  it('Should render disabled state', () => {
-    const testId = 'disabled-test-id'
+      render(
+        <Button data-testid={testId} isSelected>
+          Selected state test
+        </Button>,
+      )
+      expect(screen.getByTestId(testId)).toHaveClass('Button--selected')
+    })
 
-    render(
-      <Button data-testid={testId} isDisabled>
-        Disabled state test
-      </Button>,
-    )
-    expect(screen.getByTestId(testId)).toHaveClass('Button--disabled')
+    it('should render disabled state', () => {
+      expect.hasAssertions()
+
+      const testId = 'disabled-test-id'
+
+      render(
+        <Button data-testid={testId} isDisabled>
+          Disabled state test
+        </Button>,
+      )
+      expect(screen.getByTestId(testId)).toHaveClass('Button--disabled')
+    })
   })
 })

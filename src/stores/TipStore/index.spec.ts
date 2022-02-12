@@ -1,6 +1,6 @@
 import { TipStore } from './index'
 
-describe('test TipStore', () => {
+describe('test TipStore store', () => {
   it('should have default values', () => {
     expect.hasAssertions()
 
