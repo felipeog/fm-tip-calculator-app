@@ -44,4 +44,5 @@ class TipStore {
   }
 }
 
+export { TipStore }
 export default new TipStore()
