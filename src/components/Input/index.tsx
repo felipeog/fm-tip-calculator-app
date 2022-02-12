@@ -1,27 +1,33 @@
+import classNames from 'classnames'
 import { InputHTMLAttributes } from 'react'
 
-import { AvailableIcons, Icon } from '../Icon'
+import { Icon, TIcon } from '../Icon'
 import './index.css'
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
-  icon?: AvailableIcons
+  icon?: TIcon
 }
 
-export function Input({ label, icon, ...props }: InputProps) {
+export function Input({ className, label, icon, ...props }: InputProps) {
   return (
-    <label className="Input" htmlFor={props.name}>
+    <div className={classNames('Input', className)}>
       {label && (
-        <div className="Input__label-container">
-          <p>{label}</p>
-        </div>
+        <label className="Input__label" htmlFor={props.name}>
+          {label}
+        </label>
       )}
 
       <div className="Input__input-container">
-        {icon && <Icon icon={icon} />}
+        {icon && <Icon className="Input__icon" icon={icon} />}
 
-        <input name={props.name} id={props.name} {...props} />
+        <input
+          className="Input__input"
+          name={props.name}
+          id={props.name}
+          {...props}
+        />
       </div>
-    </label>
+    </div>
   )
 }

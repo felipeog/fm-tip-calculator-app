@@ -1,13 +1,10 @@
 .Input {
-  display: block;
   font-size: 0.6rem;
   color: var(--dark_grayish_cyan1);
 }
 
-.Input__label-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.Input__label {
+  display: block;
   margin-bottom: 0.4rem;
 }
 
@@ -25,12 +22,12 @@
   border-color: var(--dark_grayish_cyan2);
 }
 
-.Input svg {
+.Input__icon {
   flex-grow: 0;
   flex-shrink: 0;
 }
 
-.Input input {
+.Input__input {
   flex-grow: 1;
   font-size: 1rem;
   font-weight: var(--bold_weight);
@@ -40,8 +37,8 @@
   background-color: transparent;
 }
 
-.Input input::-webkit-outer-spin-button,
-.Input input::-webkit-inner-spin-button {
+.Input__input::-webkit-outer-spin-button,
+.Input__input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
