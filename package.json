@@ -7,8 +7,8 @@
   "scripts": {
     "start": "parcel --no-cache",
     "build": "parcel build",
-    "test": "jest ./src/components/**/*.spec.tsx --verbose",
-    "test:watch": "jest ./src/components/**/*.spec.tsx --watch",
+    "test": "jest --verbose",
+    "test:watch": "jest --watch",
     "test:changed": "jest -o",
     "test:watch-changed": "jest -o --watch",
     "test:coverage": "jest --coverage",
