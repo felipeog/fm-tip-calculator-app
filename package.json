@@ -2,18 +2,17 @@
   "name": "fm-tip-calculator-app",
   "version": "1.0.0",
   "source": "src/index.html",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "author": "https://github.com/felipeog",
+  "license": "ISC",
   "scripts": {
     "start": "parcel --no-cache",
     "build": "parcel build",
-    "test": "jest ./src/components/**/*.spec.tsx",
+    "test": "jest ./src/components/**/*.spec.tsx --verbose",
     "test:watch": "jest ./src/components/**/*.spec.tsx --watch",
     "test:changed": "jest -o",
     "test:watch-changed": "jest -o --watch",
     "pre-commit": "lint-staged"
   },
-  "author": "https://github.com/felipeog",
-  "license": "ISC",
   "dependencies": {
     "classnames": "^2.3.1",
     "mobx": "^6.3.13",
@@ -55,5 +54,6 @@
     "*.{html,css}": [
       "prettier --write"
     ]
-  }
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
