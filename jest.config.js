@@ -6,4 +6,8 @@ module.exports = {
     '.+\\.(css)$': 'jest-css-modules-transform',
     '.+\\.(svg)$': 'svg-jest',
   },
+  coveragePathIgnorePatterns: [
+    '<rootDir>/node_modules',
+    '<rootDir>/src/.+\\.(css)$',
+  ],
 }
