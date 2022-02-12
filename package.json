@@ -8,6 +8,8 @@
     "build": "parcel build",
     "test": "jest ./src/components/**/*.spec.tsx",
     "test:watch": "jest ./src/components/**/*.spec.tsx --watch",
+    "test:changed": "jest -o",
+    "test:watch-changed": "jest -o --watch",
     "pre-commit": "lint-staged"
   },
   "author": "https://github.com/felipeog",
