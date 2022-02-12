@@ -1,4 +1,6 @@
-node_modules
+coverage
 dist
-.parcel-cache
+node_modules
+
 .DS_Store
+.parcel-cache
