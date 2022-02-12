@@ -16,7 +16,7 @@ describe('Props tests', () => {
     expect(screen.getByText(label)).toBeInTheDocument()
   })
 
-  /* eslint-disable testing-library/no-container, testing-library/no-node-access */
+  /* eslint-disable  */
   it('Should not render label', () => {
     const { container } = render(<Input />)
 
@@ -34,7 +34,7 @@ describe('Props tests', () => {
 
     expect(container.querySelector('svg')).not.toBeInTheDocument()
   })
-  /* eslint-enable testing-library/no-container, testing-library/no-node-access */
+  /* eslint-enable  */
 })
 
 describe('Events tests', () => {
