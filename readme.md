@@ -41,12 +41,12 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Desktop first workflow
-- [React](https://reactjs.org/) - JS library
-- [MobX](https://mobx.js.org/) - State management
-- [Parcel](https://parceljs.org/) - Build tool
-- [TypeScript](https://www.typescriptlang.org/) - Typed programming language
-- [ESLint](https://eslint.org/) - Linter
-- [Testing Library](https://testing-library.com/) - Testing utilities
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [MobX](https://mobx.js.org/) - Simple, scalable state management
+- [Parcel](https://parceljs.org/) - The zero configuration build tool
+- [TypeScript](https://www.typescriptlang.org/) - TypeScript is JavaScript with syntax for types
+- [ESLint](https://eslint.org/) - Find and fix problems in your JavaScript code
+- [Testing Library](https://testing-library.com/) - Simple and complete testing utilities that encourage good testing practices
 
 ## Author
 
