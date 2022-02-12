@@ -46,6 +46,7 @@ Users should be able to:
 - [Parcel](https://parceljs.org/) - Build tool
 - [TypeScript](https://www.typescriptlang.org/) - Typed programming language
 - [ESLint](https://eslint.org/) - Linter
+- [Testing Library](https://testing-library.com/) - Testing utilities
 
 ## Author
 
