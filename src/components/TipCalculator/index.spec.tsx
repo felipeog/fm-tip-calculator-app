@@ -23,6 +23,13 @@ describe('UI tests', () => {
     })
   })
 
+  it('Should render custom tip input', () => {
+    const { container } = render(<TipCalculator />)
+
+    /* eslint-disable-next-line */
+    expect(container.querySelector('input[name=tip]')).toBeInTheDocument()
+  })
+
   it('Should render Number of People input', () => {
     const { container } = render(<TipCalculator />)
 
