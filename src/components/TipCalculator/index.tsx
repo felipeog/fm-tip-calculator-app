@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { HTMLAttributes, useState } from 'react'
 import { observer } from 'mobx-react-lite'
+import classNames from 'classnames'
 
 import './index.css'
 import { Button } from '../Button'
@@ -7,9 +8,14 @@ import { Input } from '../Input'
 import { TipResult } from '../TipResult'
 import TipStore from '../../stores/TipStore'
 
-const TIP_PERCENTAGES = [5, 10, 15, 25, 50]
+export const TIP_PERCENTAGES = [5, 10, 15, 25, 50]
 
-export const TipCalculator = observer(function TipCalculator() {
+export type TipCalculatorProps = HTMLAttributes<HTMLElement>
+
+export const TipCalculator = observer(function TipCalculator({
+  className,
+  ...props
+}: TipCalculatorProps) {
   const [isCustomTipPercentage, setIsCustomTipPercentage] = useState(false)
 
   function resetInputs() {
@@ -37,7 +43,7 @@ export const TipCalculator = observer(function TipCalculator() {
   ].every((value) => !value)
 
   return (
-    <main className="TipCalculator">
+    <main className={classNames('TipCalculator', className)} {...props}>
       <div className="TipCalculator__form">
         <Input
           label="Bill"

@@ -7,7 +7,7 @@ export type TIcon = keyof typeof ICONS
 
 export const AVAILABLE_ICONS = Object.keys(ICONS) as TIcon[]
 
-interface IconProps extends SVGProps<SVGSVGElement> {
+export interface IconProps extends SVGProps<SVGSVGElement> {
   icon: TIcon
 }
 

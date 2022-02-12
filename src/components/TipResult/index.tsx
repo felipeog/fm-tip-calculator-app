@@ -1,11 +1,19 @@
+import { HTMLAttributes } from 'react'
+import classNames from 'classnames'
+
 import './index.css'
 
-interface TipResultProps {
+export interface TipResultProps extends HTMLAttributes<HTMLDivElement> {
   label: string
   value: number
 }
 
-export function TipResult({ label, value }: TipResultProps) {
+export function TipResult({
+  className,
+  label,
+  value,
+  ...props
+}: TipResultProps) {
   function getFormattedValue(rawValue: number) {
     if (!rawValue || isNaN(rawValue)) {
       return '$0.00'
@@ -15,7 +23,7 @@ export function TipResult({ label, value }: TipResultProps) {
   }
 
   return (
-    <div className="TipResult">
+    <div className={classNames('TipResult', className)} {...props}>
       <div>
         <p className="TipResult__label">{label}</p>
         <p className="TipResult__sublabel">/ person</p>
