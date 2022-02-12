@@ -12,12 +12,12 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
   "plugins": ["react", "@typescript-eslint", "testing-library", "jest-dom"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
   "overrides": [
     {
       "extends": ["plugin:react/recommended"],
-      "files": ["./src/components/**/*.tsx"],
+      "files": ["./src/*.tsx", "./src/components/**/*.tsx"],
       "excludedFiles": ["*.spec.tsx"],
       "rules": {
         "react/react-in-jsx-scope": "off"
@@ -28,7 +28,7 @@
         "plugin:testing-library/react",
         "plugin:jest-dom/recommended"
       ],
-      "files": ["./**/*.spec.tsx"]
+      "files": ["./src/components/**/*.spec.tsx"]
     }
   ]
 }
