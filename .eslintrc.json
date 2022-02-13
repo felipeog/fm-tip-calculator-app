@@ -39,6 +39,10 @@
     {
       "extends": ["plugin:jest/all"],
       "files": ["./**/*.spec.ts", "./**/*.spec.tsx"]
+    },
+    {
+      "extends": ["plugin:storybook/recommended"],
+      "files": ["./**/*.stories.tsx"]
     }
   ]
 }
