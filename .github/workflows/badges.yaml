@@ -25,5 +25,5 @@ jobs:
           git config --local user.email ${{ secrets.USER_EMAIL }}
           git config --local user.name "${{ secrets.USER_NAME }}"
           git add coverage
-          git commit -m "Add coverage badges" --allow-empty
+          git diff-index --quiet HEAD || git commit -m "Add coverage badges"
           git push
