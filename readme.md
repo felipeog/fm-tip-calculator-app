@@ -1,10 +1,4 @@
-![Branches](./coverage/badge-branches.svg)
-
-![Functions](./coverage/badge-functions.svg)
-
-![Lines](./coverage/badge-lines.svg)
-
-![Statements](./coverage/badge-statements.svg)
+![Branches](./coverage/badge-branches.svg) ![Functions](./coverage/badge-functions.svg) ![Lines](./coverage/badge-lines.svg) ![Statements](./coverage/badge-statements.svg)
 
 # Frontend Mentor - Tip calculator app solution
 
@@ -32,9 +26,9 @@ Users should be able to:
 
 ### Screenshots
 
-| Desktop                                                                                                                | Mobile                                                                                                               |
-| ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| [![tip-calculator-desktop.png](https://i.postimg.cc/J09jmWfL/tip-calculator-desktop.png)](https://postimg.cc/y3yDX26Q) | [![tip-calculator-mobile.png](https://i.postimg.cc/cCKfVJ5h/tip-calculator-mobile.png)](https://postimg.cc/LgpqPmSg) |
+| Desktop | Mobile |
+| --- | --- |
+| ![tip-calculator-desktop.png](https://i.postimg.cc/J09jmWfL/tip-calculator-desktop.png) | ![tip-calculator-mobile.png](https://i.postimg.cc/cCKfVJ5h/tip-calculator-mobile.png) |
 
 ### Links
 
