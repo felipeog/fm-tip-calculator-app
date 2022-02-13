@@ -28,7 +28,7 @@ Users should be able to:
 
 | Desktop | Mobile |
 | --- | --- |
-| [![tip-calculator-desktop.png](https://i.postimg.cc/J09jmWfL/tip-calculator-desktop.png)](https://postimg.cc/y3yDX26Q) | [![tip-calculator-mobile.png](https://i.postimg.cc/cCKfVJ5h/tip-calculator-mobile.png)](https://postimg.cc/LgpqPmSg) |
+| ![tip-calculator-desktop.png](https://i.postimg.cc/J09jmWfL/tip-calculator-desktop.png) | ![tip-calculator-mobile.png](https://i.postimg.cc/cCKfVJ5h/tip-calculator-mobile.png) |
 
 ### Links
 
