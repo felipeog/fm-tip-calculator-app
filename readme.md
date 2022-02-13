@@ -1,3 +1,11 @@
+![Branches](./coverage/badge-branches.svg)
+
+![Functions](./coverage/badge-functions.svg)
+
+![Lines](./coverage/badge-lines.svg)
+
+![Statements](./coverage/badge-statements.svg)
+
 # Frontend Mentor - Tip calculator app solution
 
 This is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
@@ -24,8 +32,8 @@ Users should be able to:
 
 ### Screenshots
 
-| Desktop | Mobile |
-| --- | --- |
+| Desktop                                                                                                                | Mobile                                                                                                               |
+| ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | [![tip-calculator-desktop.png](https://i.postimg.cc/J09jmWfL/tip-calculator-desktop.png)](https://postimg.cc/y3yDX26Q) | [![tip-calculator-mobile.png](https://i.postimg.cc/cCKfVJ5h/tip-calculator-mobile.png)](https://postimg.cc/LgpqPmSg) |
 
 ### Links

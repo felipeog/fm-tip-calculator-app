@@ -10,4 +10,5 @@ module.exports = {
     '<rootDir>/node_modules',
     '<rootDir>/src/.+\\.(css)$',
   ],
+  coverageReporters: ['json-summary', 'text', 'lcov'],
 }
