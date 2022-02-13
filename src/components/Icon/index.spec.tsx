@@ -8,14 +8,4 @@ describe('test Icon component', () => {
     expect.hasAssertions()
     expect(render(<Icon icon="dollar" />)).toBeTruthy()
   })
-
-  it.each(AVAILABLE_ICONS)('should render %s icon', (icon) => {
-    expect.hasAssertions()
-
-    const testId = icon
-    const { unmount } = render(<Icon data-testid={testId} icon={icon} />)
-
-    expect(screen.getByTestId(testId)).toBeInTheDocument()
-    unmount()
-  })
 })
