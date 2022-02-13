@@ -6,7 +6,7 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+  - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -24,8 +24,9 @@ Users should be able to:
 
 ### Screenshots
 
-[![tip-calculator-desktop.png](https://i.postimg.cc/J09jmWfL/tip-calculator-desktop.png)](https://postimg.cc/y3yDX26Q)
-[![tip-calculator-mobile.png](https://i.postimg.cc/cCKfVJ5h/tip-calculator-mobile.png)](https://postimg.cc/LgpqPmSg)
+| Desktop | Mobile |
+| --- | --- |
+| [![tip-calculator-desktop.png](https://i.postimg.cc/J09jmWfL/tip-calculator-desktop.png)](https://postimg.cc/y3yDX26Q) | [![tip-calculator-mobile.png](https://i.postimg.cc/cCKfVJ5h/tip-calculator-mobile.png)](https://postimg.cc/LgpqPmSg) |
 
 ### Links
 
@@ -36,17 +37,13 @@ Users should be able to:
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Desktop first workflow
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [MobX](https://mobx.js.org/) - Simple, scalable state management
 - [Parcel](https://parceljs.org/) - The zero configuration build tool
 - [TypeScript](https://www.typescriptlang.org/) - TypeScript is JavaScript with syntax for types
 - [ESLint](https://eslint.org/) - Find and fix problems in your JavaScript code
 - [Testing Library](https://testing-library.com/) - Simple and complete testing utilities that encourage good testing practices
+- [Jest](https://jestjs.io) - Jest is a delightful JavaScript Testing Framework with a focus on simplicity
 
 ## Author
 
