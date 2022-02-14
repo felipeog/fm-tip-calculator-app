@@ -12,11 +12,11 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
 export const Disabled = Template.bind({})
 Disabled.args = {
   isDisabled: true,
-  children: 'Button',
+  children: 'Disabled',
 }
 
 export const Selected = Template.bind({})
 Selected.args = {
-  isSelect: true,
-  children: 'Button',
+  isSelected: true,
+  children: 'Selected',
 }
