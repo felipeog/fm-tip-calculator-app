@@ -24,7 +24,7 @@
     {
       "extends": ["plugin:react/recommended"],
       "files": ["./**/*.tsx"],
-      "excludedFiles": ["*.spec.tsx"],
+      "excludedFiles": ["*.spec.tsx", "*.stories.tsx"],
       "rules": {
         "react/react-in-jsx-scope": "off"
       }
