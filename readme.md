@@ -46,6 +46,7 @@ Users should be able to:
 - [ESLint](https://eslint.org/) - Find and fix problems in your JavaScript code
 - [Testing Library](https://testing-library.com/) - Simple and complete testing utilities that encourage good testing practices
 - [Jest](https://jestjs.io) - Jest is a delightful JavaScript Testing Framework with a focus on simplicity
+- [GitHub Actions](https://github.com/features/actions) - Automate your workflow from idea to production
 
 ## Author
 
